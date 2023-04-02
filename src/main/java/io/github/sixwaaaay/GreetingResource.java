@@ -15,17 +15,16 @@ package io.github.sixwaaaay;
 
 import io.smallrye.common.annotation.Blocking;
 import io.smallrye.common.annotation.RunOnVirtualThread;
-
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 
 @Path("")
 @Blocking
 public class GreetingResource {
-    @GET
-    @Path("/virtual")
-    @RunOnVirtualThread
-    public String virtual() {
-        return "quarkus";
-    }
+  @GET
+  @Path("/virtual")
+  @RunOnVirtualThread
+  public String virtual() {
+    return "quarkus";
+  }
 }
