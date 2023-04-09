@@ -13,23 +13,21 @@
 
 package io.github.sixwaaaay.components;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import co.elastic.clients.elasticsearch.ElasticsearchClient;
 import io.quarkus.test.junit.QuarkusTest;
-import org.junit.jupiter.api.Test;
-
-import javax.inject.Inject;
 import java.io.IOException;
-
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import javax.inject.Inject;
+import org.junit.jupiter.api.Test;
 
 @QuarkusTest
 class ElasticSearchTest {
-    @Inject
-    ElasticsearchClient client;
+  @Inject ElasticsearchClient client;
 
-    @Test
-    void testConn() throws IOException {
-        var ping = client.ping();
-        assertTrue(ping.value());
-    }
+  @Test
+  void testConn() throws IOException {
+    var ping = client.ping();
+    assertTrue(ping.value());
+  }
 }

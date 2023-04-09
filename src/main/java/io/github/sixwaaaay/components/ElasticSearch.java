@@ -16,21 +16,20 @@ package io.github.sixwaaaay.components;
 import co.elastic.clients.elasticsearch.ElasticsearchClient;
 import co.elastic.clients.json.jackson.JacksonJsonpMapper;
 import co.elastic.clients.transport.rest_client.RestClientTransport;
-import org.elasticsearch.client.RestClient;
-
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.inject.Produces;
+import org.elasticsearch.client.RestClient;
 
 /**
  * ElasticSearch is a component that provides a ElasticsearchClient instance.
  */
 @ApplicationScoped
 public class ElasticSearch {
-    @Produces
-    public ElasticsearchClient wrap(RestClient restClient) {
-        // Create the transport with a Jackson mapper
-        var mapper = new JacksonJsonpMapper();
-        var transport = new RestClientTransport(restClient, mapper);
-        return new ElasticsearchClient(transport);
-    }
+  @Produces
+  public ElasticsearchClient wrap(RestClient restClient) {
+    // Create the transport with a Jackson mapper
+    var mapper = new JacksonJsonpMapper();
+    var transport = new RestClientTransport(restClient, mapper);
+    return new ElasticsearchClient(transport);
+  }
 }
