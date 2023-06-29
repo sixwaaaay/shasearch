@@ -74,7 +74,7 @@
         <dependency>
             <groupId>co.elastic.clients</groupId>
             <artifactId>elasticsearch-java</artifactId>
-            <version>8.7.0</version>
+            <version>8.8.2</version>
         </dependency>
 
         <dependency>
